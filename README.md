@@ -118,6 +118,8 @@ With Django development server:
     python manage.py runserver
 ```
 
+Then you can visit `http://localhost:8000` and input in the text box an URL to a Github project to be able to search for popular forks.
+
 
 ## TODO
 
