@@ -1,4 +1,4 @@
-#GitPop2
+GitPop2
 =================
 
 Find the most popular fork on GitHub <http://gitpop2.herokuapp.com/>
@@ -10,7 +10,6 @@ GitPop2 helps you choose a fork when a project goes unmaintained. It allows you 
 
 
 ## Install using Pipenv
---------------
 
 This project uses Pipenv as packaging tool, and is currently only compatible with Python 2.7.16. 
 
@@ -19,7 +18,6 @@ This project uses Pipenv as packaging tool, and is currently only compatible wit
 ```
 
 ## Install with Pip and Pyenv
------------
 
 If you prefer to install by using pip, use the following steps:
 
@@ -48,7 +46,6 @@ Then install the requirements:
 ```
 
 ## Install Pipenv
------------
 
 ```
 pip3 install --user pipenv
@@ -82,7 +79,6 @@ If you prefer to remove the virtualenv:
 
 
 ## Install Pyenv
------------
 
 You may not have Python 2.7.16 installed in your system, as it's approaching EOL in January 2020. You would need to use Pyenv to install it locally for your user.
 
@@ -109,7 +105,6 @@ export SHFILE=".profile" && echo "export PATH=\"\$HOME/.pyenv/bin:\$PATH\"" >> $
 ```
 
 ## Run
---------------
 
 With Gunicorn WSGI server:
 
@@ -125,13 +120,11 @@ With Django development server:
 
 
 ## TODO
---------
 
 Upgrade package to be compatible with Python 3.
 
 
 ## Credits
--------
 
 This package is forked from [AndreMiras/gitpop2](https://github.com/AndreMiras/gitpop2) project.
 
