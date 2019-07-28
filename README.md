@@ -54,7 +54,7 @@ pip3 install --user pipenv
 Then you need to add the pipenv location to your PATH:
 
 ```sh
-    echo "export PATH=\$HOME/.local/bin:\$PATH" >> ~/.profile && source ~/.profile
+    export SHFILE="${HOME}/.profile" && echo "export PATH=\$HOME/.local/bin:\$PATH" >> ${SHFILE} && source ${SHFILE} && unset SHFILE
 ```
 
 You could be using a different file for the profile of your shell in your system, e.g. `.bash_profile` or `.zprofile`. I recommend that you place it in one of these files for your specific shell instead of using `.profile`.
@@ -85,7 +85,7 @@ You may not have Python 2.7.16 installed in your system, as it's approaching EOL
 Using [Pyenv-installer](https://github.com/pyenv/pyenv-installer). Please refer to the official project page to review the up-to-date install instructions. As of now, you would run:
 
 ```sh
-curl https://pyenv.run | bash
+    curl https://pyenv.run | bash
 ```
 
 As Pyenv compiles the version of python from source, it has certain build dependencies. Please refer to the project's [Common build problems](https://github.com/pyenv/pyenv/wiki/common-build-problems) and preemptively install dependencies for your system.
@@ -93,28 +93,28 @@ As Pyenv compiles the version of python from source, it has certain build depend
 Then you would need to add certain variables to your path. Add the following files to either your `.bashrc`, `.zshrc`, `.bash_profile` or `.zprofile`.
 
 ```sh
-export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+    export PATH="$HOME/.pyenv/bin:$PATH"
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
 ```
 
 You can choose to add these lines by using the following command:
 
 ```sh
-export SHFILE=".profile" && echo "export PATH=\"\$HOME/.pyenv/bin:\$PATH\"" >> $SHFILE && echo "eval \"\$(pyenv init -)\"" >> $SHFILE && echo "eval \"\$(pyenv virtualenv-init -)\"" >> $SHFILE && source ~/.profile
+    export SHFILE="${HOME}/.profile" && echo "export PATH=\"\$HOME/.pyenv/bin:\$PATH\"" >> ${SHFILE} && echo "eval \"\$(pyenv init -)\"" >> ${SHFILE} && echo "eval \"\$(pyenv virtualenv-init -)\"" >> ${SHFILE} && source ${SHFILE} && unset SHFILE
 ```
 
 ## Run
 
 With Gunicorn WSGI server:
 
-```
+```sh
     gunicorn gitpop2.wsgi
 ```
 
 With Django development server:
 
-```
+```sh
     python manage.py runserver
 ```
 
